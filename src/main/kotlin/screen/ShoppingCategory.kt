@@ -9,6 +9,7 @@ class ShoppingCategory : Screen() {
          * (2) 사용자 입력 받기
          * (3) 사용자가 잘못된 값 입력 처리
          */
+
         // 스텍에 저장
         ScreenStack.push(this)
         val categories = arrayOf("패션", "전자기기", "반려동물용품")
@@ -36,8 +37,8 @@ class ShoppingCategory : Screen() {
         } else {
             if (categories.contains(selectedCategory)) {
                 // 카테고리 상품 목록 보여주기
-                val shoppingProductList = ShoppingProductList()
-                shoppingProductList.showProducts(selectedCategory)
+                val shoppingProductList = ShoppingProductList(selectedCategory)
+                shoppingProductList.showProducts()
             } else {
                 showErrorMessage(selectedCategory)
             }
